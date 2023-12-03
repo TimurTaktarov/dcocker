@@ -3,7 +3,7 @@ import datetime
 import time
 import requests
 
-station = sys.argv[1:]
+station = sys.argv[1]
 
 base_url = "http://api.open-notify.org/iss-now.json"
 
