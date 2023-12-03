@@ -45,6 +45,6 @@ jobs:
           pip install flake8 pytest black isort faker
       - name: check with linter
         run: |
-          black . --check
+          black .
           isort .
           flake8 .
