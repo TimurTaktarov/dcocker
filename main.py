@@ -1,18 +1,15 @@
+from datetime import datetime
+from time import sleep
 import sys
-import datetime
-import time
-import requests
 
-station = sys.argv[1:]
+seconds = int(sys.argv[-1])
 
-base_url = "http://api.open-notify.org/iss-now.json"
 
-while True:
-    response = requests.get(url=base_url)
-    data = response.json()
-    result = f'{datetime.datetime.now()};{data["iss_position"]} >>> {data["message"]}; timestamp: {data["timestamp"]}\n'
-    print(result, end='')
+def sec(count: int):
+    while count:
+        print(f'{datetime.now()} seconds\n')
+        sleep(1)
+        count -= 1
 
-    with open(f'statistic/{station}.csv', 'a') as file:
-        file.write(result)
-        time.sleep(5)
+
+sec(seconds)
