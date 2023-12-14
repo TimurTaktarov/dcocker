@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+  database777:
+    image: postgres:15
+    restart: always
+    environment:
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: root
+      POSTGRES_DB: database1488
+    ports:
+      - "55566:5432"
