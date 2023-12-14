@@ -1,11 +1,11 @@
 import psycopg2
 
 # ex. 1
-DATABASE = 'test_db'
+DATABASE = 'database1488'
 USER = 'root'
 PASSWORD = 'root'
 HOST = '127.0.0.1'
-PORT = '55555'
+PORT = '55566'
 
 connection = psycopg2.connect(
     database=DATABASE,
@@ -29,8 +29,12 @@ cursor.execute(
 
 # ex. 3
 # cursor.execute(
-#     """INSERT INTO goods(title, price, warranty_period_days) VALUES('Water', 900, 9);"""
+#     """INSERT INTO goods(title, price, warranty_period_days) VALUES('Banana', 15, 13);"""
 # )
+
+connection.commit()
+cursor.close()
+connection.close()
 
 # ex. 4
 # cursor.execute('select * from goods where price > 50;')
@@ -56,8 +60,3 @@ cursor.execute(
 # cursor.execute("select id, title from goods order by id limit 3 offset 3;")
 # result = cursor.fetchall()
 # print(result)
-
-
-connection.commit()
-cursor.close()
-connection.close()
